@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -11,7 +12,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Map map = new Map(40, 40);
-            map.PrintMap();
+            Player player = new Player(40, 40);
+
+            while (true)
+            {
+                map.PrintMap();
+                player.PrintPlayer();
+
+                Thread.Sleep(10000);
+            }
         }
     }
 }
